@@ -37,5 +37,6 @@ jobs:
     #   matrix:
     #     options: [A, B, C]
     needs: alpha
+    name: Beta
 
     uses: ./.github/workflows/reuse-matrix.yml
