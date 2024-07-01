@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: Build
     uses: ./.github/workflows/reuse.yml
 
   run:
@@ -25,15 +26,16 @@ jobs:
     uses: ./.github/workflows/reuse.yml
 
   alpha:
+    name: Build
     # The type of runner that the job will run on
     needs: run
     uses: ./.github/workflows/reuse.yml
 
   calico:
     # The type of runner that the job will run on
-    strategy:
-      matrix:
-        options: [A, B, C]
+    # strategy:
+    #   matrix:
+    #     options: [A, B, C]
     needs: alpha
 
     uses: ./.github/workflows/reuse-matrix.yml
