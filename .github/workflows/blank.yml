@@ -97,3 +97,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          if [ "${{matrix.options}}" == "C" ]; then
+            exit $((0 + $RANDOM % 3))
+          fi
