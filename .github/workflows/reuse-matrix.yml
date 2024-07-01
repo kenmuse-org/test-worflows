@@ -1,0 +1,11 @@
+run-name: Good Times
+
+on:
+  workflow_call:
+
+jobs:
+  funny:
+    strategy:
+      matrix:
+        options: [A, B, C]
+    uses: ./.github/workflows/reuse.yml
